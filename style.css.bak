@@ -1,0 +1,79 @@
+/* Стили ИС "Магазин игрушек". Шрифт Arial, палитра из руководства по стилю. */
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: #DEB887;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #8B7355;
+}
+.header .logo { font-size: 20px; font-weight: bold; }
+.header .user-info { font-size: 14px; }
+.container { padding: 20px; max-width: 1200px; margin: 0 auto; }
+.login-box {
+    max-width: 360px;
+    margin: 60px auto;
+    background: #F5DEB3;
+    padding: 24px;
+    border-radius: 6px;
+    border: 1px solid #DEB887;
+}
+.login-box h1 { margin-top: 0; text-align: center; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; margin-bottom: 4px; font-weight: bold; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 8px; border: 1px solid #999; border-radius: 4px; font-family: Arial;
+}
+.btn {
+    background: #DEB887; color: #000; border: 1px solid #8B7355;
+    padding: 8px 16px; border-radius: 4px; cursor: pointer; font-family: Arial; font-size: 14px;
+    text-decoration: none; display: inline-block;
+}
+.btn:hover { background: #CDA86A; }
+.btn-danger { background: #E57373; border-color: #B33A3A; color: #fff; }
+.btn-danger:hover { background: #D9534F; }
+.btn-link {
+    background: none; border: none; color: #0066cc; cursor: pointer;
+    text-decoration: underline; padding: 0; font-family: Arial; font-size: 14px;
+}
+.nav { margin-bottom: 16px; }
+.nav a { margin-right: 8px; }
+.filters {
+    background: #F5DEB3; padding: 12px; border-radius: 6px; margin-bottom: 16px;
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+}
+.filters .form-group { margin-bottom: 0; }
+table.products {
+    width: 100%; border-collapse: collapse; background: #fff;
+}
+table.products th, table.products td {
+    border: 1px solid #ccc; padding: 8px; vertical-align: top; font-size: 13px;
+}
+table.products th { background: #DEB887; text-align: left; }
+.row-img { width: 60px; height: 60px; object-fit: cover; }
+/* Подсветка строк по заданию */
+.row-discount { background: #FFDEAD !important; }
+.row-out-of-stock td { background: #B0E0E6 !important; }
+.price-old { text-decoration: line-through; color: #cc0000; }
+.price-new { color: #000000; font-weight: bold; }
+.msg { padding: 10px 16px; border-radius: 4px; margin-bottom: 16px; }
+.msg-error   { background: #F8D7DA; border: 1px solid #D9534F; color: #721C24; }
+.msg-ok      { background: #D4EDDA; border: 1px solid #28A745; color: #155724; }
+.msg-warn    { background: #FFF3CD; border: 1px solid #FFC107; color: #856404; }
+.muted { color: #666; font-size: 12px; }
+.back-link { margin-top: 12px; }
+.form-actions { margin-top: 16px; }
+fieldset { border: 1px solid #DEB887; padding: 16px; border-radius: 6px; }
+legend { font-weight: bold; padding: 0 8px; }
+.guide h2 { border-bottom: 2px solid #DEB887; padding-bottom: 4px; }
+.guide table { width: 100%; border-collapse: collapse; }
+.guide th, .guide td { border: 1px solid #ccc; padding: 8px; }
+.guide th { background: #F5DEB3; }

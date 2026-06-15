@@ -1,0 +1,359 @@
+/* Стили ИС "Магазин игрушек". Шрифт Arial, палитра из руководства по стилю. */
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: #DEB887;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #8B7355;
+}
+.header .logo { font-size: 20px; font-weight: bold; }
+.header .user-info { font-size: 14px; }
+.container { padding: 20px; max-width: 1200px; margin: 0 auto; }
+.login-box {
+    max-width: 360px;
+    margin: 60px auto;
+    background: #F5DEB3;
+    padding: 24px;
+    border-radius: 6px;
+    border: 1px solid #DEB887;
+}
+.login-box h1 { margin-top: 0; text-align: center; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; margin-bottom: 4px; font-weight: bold; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 8px; border: 1px solid #999; border-radius: 4px; font-family: Arial;
+}
+.btn {
+    background: #DEB887; color: #000; border: 1px solid #8B7355;
+    padding: 8px 16px; border-radius: 4px; cursor: pointer; font-family: Arial; font-size: 14px;
+    text-decoration: none; display: inline-block;
+}
+.btn:hover { background: #CDA86A; }
+.btn-danger { background: #E57373; border-color: #B33A3A; color: #fff; }
+.btn-danger:hover { background: #D9534F; }
+.btn-link {
+    background: none; border: none; color: #0066cc; cursor: pointer;
+    text-decoration: underline; padding: 0; font-family: Arial; font-size: 14px;
+}
+.nav { margin-bottom: 16px; }
+.nav a { margin-right: 8px; }
+.filters {
+    background: #F5DEB3; padding: 12px; border-radius: 6px; margin-bottom: 16px;
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+}
+.filters .form-group { margin-bottom: 0; }
+table.products {
+    width: 100%; border-collapse: collapse; background: #fff;
+}
+table.products th, table.products td {
+    border: 1px solid #ccc; padding: 8px; vertical-align: top; font-size: 13px;
+}
+table.products th { background: #DEB887; text-align: left; }
+.row-img { width: 60px; height: 60px; object-fit: cover; }
+/* Подсветка строк/карточек по заданию */
+.row-discount { background: #FFDEAD !important; }
+.row-out-of-stock { background: #B0E0E6 !important; }
+.row-out-of-stock td { background: #B0E0E6 !important; }
+.price-old { text-decoration: line-through; color: #cc0000; }
+.price-new { color: #000000; font-weight: bold; }
+
+/* Карточки товаров */
+.product-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+.product-card {
+    display: flex;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 6px;
+    align-items: stretch;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+.card-left {
+    flex: 0 0 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #eee;
+    padding-right: 16px;
+    margin-right: 16px;
+}
+.card-img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+.card-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #8B7355;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+.card-details p {
+    margin: 4px 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+.card-right {
+    flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #eee;
+    padding-left: 16px;
+    margin-left: 16px;
+    text-align: center;
+}
+.discount-badge {
+    font-size: 12px;
+    color: #666;
+}
+.discount-val {
+    font-size: 26px;
+    font-weight: bold;
+    color: #b33a3a;
+    display: block;
+    margin-top: 4px;
+}
+.discount-badge-none {
+    color: #999;
+    font-size: 13px;
+}
+.card-actions {
+    margin-top: auto;
+}
+.btn-danger-link {
+    color: #B33A3A !important;
+}
+
+/* Карточки заказов */
+.order-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+.order-card {
+    display: flex;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 6px;
+    align-items: stretch;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+.order-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+.order-card .card-left {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-right: 1px solid #eee;
+    padding-right: 16px;
+    margin-right: 16px;
+}
+.order-card .card-left .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8B7355;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #DEB887;
+    width: 100%;
+    padding-bottom: 6px;
+}
+.order-card .card-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.order-card .card-right {
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #eee;
+    padding-left: 16px;
+    margin-left: 16px;
+    text-align: center;
+}
+.delivery-date-container {
+    margin-bottom: auto;
+    text-align: center;
+}
+.delivery-label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+}
+.delivery-date-val {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    margin-top: 4px;
+}
+.status-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.status-new {
+    background: #FFF3CD;
+    color: #856404;
+    border: 1px solid #FFC107;
+}
+.status-completed {
+    background: #D4EDDA;
+    color: #155724;
+    border: 1px solid #28A745;
+}
+.pickup-code-badge {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.order-items-list {
+    color: #555;
+}
+
+.msg { padding: 10px 16px; border-radius: 4px; margin-bottom: 16px; }
+.msg-error   { background: #F8D7DA; border: 1px solid #D9534F; color: #721C24; }
+.msg-ok      { background: #D4EDDA; border: 1px solid #28A745; color: #155724; }
+.msg-warn    { background: #FFF3CD; border: 1px solid #FFC107; color: #856404; }
+.muted { color: #666; font-size: 12px; }
+.back-link { margin-top: 12px; }
+.form-actions { margin-top: 16px; }
+fieldset { border: 1px solid #DEB887; padding: 16px; border-radius: 6px; }
+legend { font-weight: bold; padding: 0 8px; }
+
+/* Modern Toast Notifications System */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+.toast-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 320px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.toast-card.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.toast-card.hide {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.toast-icon {
+    font-size: 20px;
+    margin-top: 2px;
+}
+.toast-content {
+    flex: 1;
+}
+.toast-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #333;
+}
+.toast-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+.toast-close {
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    margin-left: 5px;
+}
+.toast-close:hover {
+    color: #333;
+}
+
+/* Modal Confirmation for Irreversible Actions */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+.confirm-modal {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 20px;
+    text-align: center;
+}
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
